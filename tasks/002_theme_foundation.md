@@ -29,6 +29,30 @@ These documents are the source of truth.
 
 Do not ignore them.
 
+# Approved Visual Direction
+
+Use the following visual direction as the current design freeze:
+
+- warm minimalism
+- premium but approachable
+- warm off-white backgrounds
+- graphite text
+- soft apricot accent
+- generous whitespace
+- task-focused hierarchy
+- restrained shadows
+- dark mode inspired by Concept I
+- no green primary accent
+- no loud gradients
+- no wellness-app illustrations
+
+Typography direction:
+
+- Playfair Display for prominent task and editorial headings
+- Inter for body text and interface labels
+
+The exact accent tone may change later, so it must be centralized as a token.
+
 ---
 
 # Objective
