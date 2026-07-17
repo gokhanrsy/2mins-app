@@ -1,0 +1,1 @@
+Every decision should reduce friction and help users start immediately

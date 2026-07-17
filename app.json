@@ -1,15 +1,11 @@
 {
   "expo": {
-    "name": "2mins-app",
-    "slug": "2mins-app",
-    "version": "1.0.0",
+    "name": "2 Mins",
+    "slug": "2mins",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "2minsapp",
     "userInterfaceStyle": "automatic",
-    "ios": {
-      "icon": "./assets/expo.icon"
-    },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
@@ -28,7 +24,7 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#F5F1E8",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }
