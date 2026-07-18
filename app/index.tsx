@@ -144,18 +144,15 @@ function HomeScreen() {
               },
             ]}
           >
-            <View style={[styles.contextBlock, { gap: theme.spacing[1] }]}>
+            <View
+              style={[
+                styles.contextBlock,
+                { marginBottom: -theme.spacing[1] },
+              ]}
+            >
               <AppText color="textSecondary" variant="caption">
                 {CONTEXT_COPY}
               </AppText>
-              <View
-                style={{
-                  backgroundColor: theme.colors.accent,
-                  borderRadius: theme.radius.pill,
-                  height: 3,
-                  width: theme.spacing[5],
-                }}
-              />
             </View>
 
             <Card
