@@ -29,7 +29,7 @@ export function Card({
         },
         padded && {
           paddingHorizontal: theme.spacing[6],
-          paddingVertical: theme.spacing[8],
+          paddingVertical: theme.spacing[6],
         },
         style,
       ]}

@@ -1,12 +1,12 @@
 export const shadows = {
   small: {
-    shadowOpacity: 0.06,
-    shadowRadius: 8,
+    shadowOpacity: 0.05,
+    shadowRadius: 10,
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 3,
     },
-    elevation: 2,
+    elevation: 1,
   },
   medium: {
     shadowOpacity: 0.08,

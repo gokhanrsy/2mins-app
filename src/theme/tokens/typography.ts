@@ -5,8 +5,8 @@ type FontWeight = NonNullable<TextStyle["fontWeight"]>;
 export const typography = {
   display: {
     fontSize: 40,
-    lineHeight: 46,
-    fontWeight: "600" satisfies FontWeight,
+    lineHeight: 48,
+    fontWeight: "500" satisfies FontWeight,
   },
   headline: {
     fontSize: 32,

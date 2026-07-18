@@ -18,7 +18,7 @@ export interface IconButtonProps
   onPress: () => void;
 }
 
-const ICON_SIZE = 20;
+const ICON_SIZE = 18;
 const ICON_STROKE_WIDTH = 1.75;
 const MIN_TOUCH_TARGET = 44;
 const PRESSED_OPACITY = 0.72;

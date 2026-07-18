@@ -16,7 +16,7 @@ export interface PrimaryButtonProps
 }
 
 const MIN_TOUCH_TARGET = 44;
-const BUTTON_HEIGHT = 56;
+const BUTTON_HEIGHT = 52;
 const PRESSED_OPACITY = 0.92;
 const PRESSED_SCALE = 0.98;
 
@@ -46,7 +46,7 @@ export function PrimaryButton({
             : state.pressed
               ? theme.colors.accentPressed
               : theme.colors.accent,
-          borderRadius: theme.radius.pill,
+          borderRadius: theme.radius.medium,
           justifyContent: "center",
           minHeight: MIN_TOUCH_TARGET,
           minWidth: MIN_TOUCH_TARGET,
@@ -61,7 +61,7 @@ export function PrimaryButton({
         typeof style === "function" ? style(state) : style,
       ]}
     >
-      <AppText color="surface" variant="label">
+      <AppText color="accentText" variant="label">
         {children}
       </AppText>
     </Pressable>
