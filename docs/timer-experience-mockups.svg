@@ -1,0 +1,107 @@
+<svg width="1568" height="980" viewBox="0 0 1568 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1568" height="980" fill="#F2E8DC"/>
+  <text x="64" y="72" fill="#242321" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600">2 Mins timer experience mockups</text>
+  <text x="64" y="106" fill="#716A62" font-family="Inter, Arial, sans-serif" font-size="18">Design artifact only. States show calm companionship, not stopwatch pressure.</text>
+
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#7A6254" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .phone { fill: #F6F0E7; stroke: #E2D8CC; stroke-width: 1; filter: url(#shadow); }
+      .surface { fill: #FBF6EF; stroke: #E2D8CC; stroke-width: 1; }
+      .muted { fill: #9A9188; font-family: Inter, Arial, sans-serif; }
+      .secondary { fill: #716A62; font-family: Inter, Arial, sans-serif; }
+      .primary { fill: #242321; font-family: Inter, Arial, sans-serif; }
+      .accent { fill: #AB5D48; font-family: Inter, Arial, sans-serif; }
+      .buttonText { fill: #FFF9F2; font-family: Inter, Arial, sans-serif; font-weight: 600; }
+      .ghostText { fill: #716A62; font-family: Inter, Arial, sans-serif; font-weight: 600; }
+      .caption { font-size: 13px; }
+      .label { font-size: 15px; font-weight: 600; }
+      .body { font-size: 16px; }
+      .title { font-size: 24px; font-weight: 600; }
+      .display { font-size: 40px; font-weight: 500; }
+      .time { font-size: 52px; font-weight: 500; letter-spacing: 0; }
+      .remaining { font-size: 14px; }
+      .ringTrack { stroke: #E8DED3; stroke-width: 14; fill: none; stroke-linecap: round; }
+      .ringActive { stroke: #AB5D48; stroke-width: 14; fill: none; stroke-linecap: round; transform: rotate(-90deg); transform-origin: center; }
+      .ringWarm { stroke: #B58B50; stroke-width: 14; fill: none; stroke-linecap: round; transform: rotate(-90deg); transform-origin: center; }
+      .ringComplete { stroke: #6F8A73; stroke-width: 14; fill: none; stroke-linecap: round; transform: rotate(-90deg); transform-origin: center; }
+    </style>
+  </defs>
+
+  <!-- Phone 1 -->
+  <g transform="translate(64 152)">
+    <rect class="phone" width="320" height="692" rx="42"/>
+    <rect x="28" y="18" width="264" height="656" rx="28" fill="#F6F0E7"/>
+    <text x="36" y="62" class="primary label">2 Mins</text>
+    <circle cx="272" cy="55" r="17" fill="#FBF6EF" stroke="#E2D8CC"/>
+    <circle cx="268" cy="51" r="2" fill="#716A62"/><circle cx="276" cy="51" r="2" fill="#716A62"/><circle cx="268" cy="59" r="2" fill="#716A62"/><circle cx="276" cy="59" r="2" fill="#716A62"/>
+    <text x="160" y="129" text-anchor="middle" class="secondary caption">You started.</text>
+    <rect x="36" y="154" width="248" height="136" rx="24" class="surface"/>
+    <text x="160" y="215" text-anchor="middle" class="primary title">Put one dish</text>
+    <text x="160" y="247" text-anchor="middle" class="primary title">away.</text>
+    <circle cx="160" cy="405" r="74" class="ringTrack"/>
+    <circle cx="160" cy="405" r="74" class="ringActive" stroke-dasharray="465" stroke-dashoffset="70"/>
+    <text x="160" y="397" text-anchor="middle" class="primary time">02:00</text>
+    <text x="160" y="426" text-anchor="middle" class="secondary remaining">remaining</text>
+    <text x="160" y="526" text-anchor="middle" class="secondary body">Take your time.</text>
+    <rect x="36" y="582" width="248" height="56" rx="16" fill="#C9C2BA"/>
+    <text x="160" y="616" text-anchor="middle" class="buttonText">In progress</text>
+    <text x="160" y="744" text-anchor="middle" class="primary title">Session Started</text>
+  </g>
+
+  <!-- Phone 2 -->
+  <g transform="translate(440 152)">
+    <rect class="phone" width="320" height="692" rx="42"/>
+    <rect x="28" y="18" width="264" height="656" rx="28" fill="#F6F0E7"/>
+    <text x="36" y="62" class="primary label">2 Mins</text>
+    <text x="160" y="134" text-anchor="middle" class="secondary caption">Now</text>
+    <rect x="44" y="160" width="232" height="118" rx="24" class="surface"/>
+    <text x="160" y="213" text-anchor="middle" class="primary title">Put one dish</text>
+    <text x="160" y="245" text-anchor="middle" class="primary title">away.</text>
+    <circle cx="160" cy="405" r="88" class="ringTrack"/>
+    <circle cx="160" cy="405" r="88" class="ringActive" stroke-dasharray="553" stroke-dashoffset="175"/>
+    <text x="160" y="397" text-anchor="middle" class="primary time">01:42</text>
+    <text x="160" y="426" text-anchor="middle" class="secondary remaining">remaining</text>
+    <text x="160" y="544" text-anchor="middle" class="secondary body">Keep going.</text>
+    <text x="160" y="744" text-anchor="middle" class="primary title">Running</text>
+  </g>
+
+  <!-- Phone 3 -->
+  <g transform="translate(816 152)">
+    <rect class="phone" width="320" height="692" rx="42"/>
+    <rect x="28" y="18" width="264" height="656" rx="28" fill="#F6F0E7"/>
+    <text x="36" y="62" class="primary label">2 Mins</text>
+    <text x="160" y="134" text-anchor="middle" class="secondary caption">Still with you.</text>
+    <rect x="44" y="160" width="232" height="118" rx="24" fill="#FFF7EF" stroke="#E2D8CC"/>
+    <text x="160" y="213" text-anchor="middle" class="primary title">Put one dish</text>
+    <text x="160" y="245" text-anchor="middle" class="primary title">away.</text>
+    <circle cx="160" cy="405" r="88" class="ringTrack"/>
+    <circle cx="160" cy="405" r="88" class="ringWarm" stroke-dasharray="553" stroke-dashoffset="484"/>
+    <text x="160" y="397" text-anchor="middle" class="primary time">00:15</text>
+    <text x="160" y="426" text-anchor="middle" class="secondary remaining">remaining</text>
+    <text x="160" y="544" text-anchor="middle" class="accent body">Almost there.</text>
+    <text x="160" y="744" text-anchor="middle" class="primary title">Final 15 Seconds</text>
+  </g>
+
+  <!-- Phone 4 -->
+  <g transform="translate(1192 152)">
+    <rect class="phone" width="320" height="692" rx="42"/>
+    <rect x="28" y="18" width="264" height="656" rx="28" fill="#F6F0E7"/>
+    <text x="36" y="62" class="primary label">2 Mins</text>
+    <text x="160" y="134" text-anchor="middle" class="secondary caption">Finished for now.</text>
+    <rect x="44" y="160" width="232" height="118" rx="24" class="surface"/>
+    <text x="160" y="213" text-anchor="middle" class="primary title">Put one dish</text>
+    <text x="160" y="245" text-anchor="middle" class="primary title">away.</text>
+    <circle cx="160" cy="393" r="78" class="ringTrack"/>
+    <circle cx="160" cy="393" r="78" class="ringComplete" stroke-dasharray="490" stroke-dashoffset="0"/>
+    <text x="160" y="389" text-anchor="middle" class="primary display">You</text>
+    <text x="160" y="431" text-anchor="middle" class="primary display">did it.</text>
+    <text x="160" y="524" text-anchor="middle" class="secondary body">That is enough.</text>
+    <rect x="36" y="572" width="248" height="56" rx="16" fill="#AB5D48"/>
+    <text x="160" y="606" text-anchor="middle" class="buttonText">Done</text>
+    <text x="160" y="654" text-anchor="middle" class="ghostText">Another task</text>
+    <text x="160" y="744" text-anchor="middle" class="primary title">Completed</text>
+  </g>
+</svg>

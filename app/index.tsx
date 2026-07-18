@@ -9,6 +9,7 @@ import {
   type LucideIcon,
 } from "lucide-react-native";
 import {
+  AccessibilityInfo,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -25,6 +26,7 @@ import {
   PrimaryButton,
 } from "@/components/ui";
 import { APP_NAME } from "@/constants/app";
+import { useTaskSession } from "@/features/sessions/hooks";
 import { useHomeTask } from "@/features/tasks/hooks";
 import { ThemeProvider, useAppTheme, type ThemePreference } from "@/theme";
 
@@ -35,6 +37,7 @@ const MIN_TOUCH_TARGET = 44;
 const PRESSED_OPACITY = 0.72;
 const EMPTY_TASK_COPY = "No task is available right now.";
 const CONTEXT_COPY = "For right now.";
+const ACTIVE_CONTEXT_COPY = "You started.";
 const THEME_OPTIONS: {
   Icon: LucideIcon;
   label: string;
@@ -58,17 +61,35 @@ export default function Index() {
 function HomeScreen() {
   const { setThemePreference, theme } = useAppTheme();
   const { currentTask, hasTask, replaceTask } = useHomeTask();
+  const { isActive, startSession } = useTaskSession();
+  const [activeTask, setActiveTask] =
+    useState<typeof currentTask>(undefined);
   const [selectedThemePreference, setSelectedThemePreference] =
     useState<ThemePreference>("system");
   const { width } = useWindowDimensions();
   const horizontalPadding =
     width < 380 ? theme.spacing[5] : theme.spacing[6];
+  const canStart = hasTask && !isActive;
+  const canReplaceTask = hasTask && !isActive;
+  const primaryButtonLabel = isActive ? "In progress" : "Start";
+  const contextCopy = isActive ? ACTIVE_CONTEXT_COPY : CONTEXT_COPY;
+  const displayedTask = activeTask ?? currentTask;
 
   const handleThemePreferenceChange = (
     nextThemePreference: ThemePreference,
   ) => {
     setSelectedThemePreference(nextThemePreference);
     setThemePreference(nextThemePreference);
+  };
+
+  const handleStart = () => {
+    if (!canStart || currentTask === undefined) {
+      return;
+    }
+
+    startSession(currentTask);
+    setActiveTask(currentTask);
+    AccessibilityInfo.announceForAccessibility("Task started.");
   };
 
   return (
@@ -157,7 +178,7 @@ function HomeScreen() {
             >
               <View style={styles.contextBlock}>
                 <AppText color="textSecondary" variant="caption">
-                  {CONTEXT_COPY}
+                  {contextCopy}
                 </AppText>
               </View>
 
@@ -184,16 +205,19 @@ function HomeScreen() {
                   ]}
                   variant="display"
                 >
-                  {currentTask?.title ?? EMPTY_TASK_COPY}
+                  {displayedTask?.title ?? EMPTY_TASK_COPY}
                 </AppText>
               </Card>
             </View>
 
             <View style={[styles.actions, { gap: theme.spacing[1] }]}>
-              <PrimaryButton disabled={!hasTask} onPress={noop}>
-                Start
+              <PrimaryButton disabled={!canStart} onPress={handleStart}>
+                {primaryButtonLabel}
               </PrimaryButton>
-              <GhostButton disabled={!hasTask} onPress={replaceTask}>
+              <GhostButton
+                disabled={!canReplaceTask}
+                onPress={canReplaceTask ? replaceTask : noop}
+              >
                 Not this one
               </GhostButton>
             </View>
