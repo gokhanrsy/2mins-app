@@ -25,6 +25,7 @@ import {
   PrimaryButton,
 } from "@/components/ui";
 import { APP_NAME } from "@/constants/app";
+import { useHomeTask } from "@/features/tasks/hooks";
 import { ThemeProvider, useAppTheme, type ThemePreference } from "@/theme";
 
 const MAX_CONTENT_WIDTH = 560;
@@ -32,7 +33,7 @@ const NAV_ICON_SIZE = 18;
 const NAV_ICON_STROKE_WIDTH = 1.75;
 const MIN_TOUCH_TARGET = 44;
 const PRESSED_OPACITY = 0.72;
-const TASK_COPY = "Drink a glass of water.";
+const EMPTY_TASK_COPY = "No task is available right now.";
 const CONTEXT_COPY = "For right now.";
 const THEME_OPTIONS: {
   Icon: LucideIcon;
@@ -56,6 +57,7 @@ export default function Index() {
 
 function HomeScreen() {
   const { setThemePreference, theme } = useAppTheme();
+  const { currentTask, hasTask, replaceTask } = useHomeTask();
   const [selectedThemePreference, setSelectedThemePreference] =
     useState<ThemePreference>("system");
   const { width } = useWindowDimensions();
@@ -146,44 +148,54 @@ function HomeScreen() {
           >
             <View
               style={[
-                styles.contextBlock,
-                { marginBottom: -theme.spacing[1] },
-              ]}
-            >
-              <AppText color="textSecondary" variant="caption">
-                {CONTEXT_COPY}
-              </AppText>
-            </View>
-
-            <Card
-              accessibilityRole="text"
-              style={[
-                styles.taskCard,
+                styles.taskRegion,
                 {
-                  backgroundColor: theme.colors.surface,
-                  borderColor: theme.colors.border,
-                  minHeight: 180,
-                  paddingHorizontal: theme.spacing[6],
-                  paddingVertical: theme.spacing[8],
+                  gap: theme.spacing[5],
+                  minHeight: width < 380 ? 280 : 320,
                 },
               ]}
             >
-              <AppText
+              <View style={styles.contextBlock}>
+                <AppText color="textSecondary" variant="caption">
+                  {CONTEXT_COPY}
+                </AppText>
+              </View>
+
+              <Card
+                accessibilityRole="text"
                 style={[
-                  styles.taskText,
+                  styles.taskCard,
                   {
-                    color: theme.colors.textPrimary,
+                    backgroundColor: theme.colors.surface,
+                    borderColor: theme.colors.border,
+                    minHeight: 180,
+                    paddingHorizontal: theme.spacing[6],
+                    paddingVertical: theme.spacing[8],
                   },
                 ]}
-                variant="display"
               >
-                {TASK_COPY}
-              </AppText>
-            </Card>
+                <AppText
+                  accessibilityLiveRegion="polite"
+                  style={[
+                    styles.taskText,
+                    {
+                      color: theme.colors.textPrimary,
+                    },
+                  ]}
+                  variant="display"
+                >
+                  {currentTask?.title ?? EMPTY_TASK_COPY}
+                </AppText>
+              </Card>
+            </View>
 
             <View style={[styles.actions, { gap: theme.spacing[1] }]}>
-              <PrimaryButton onPress={noop}>Start</PrimaryButton>
-              <GhostButton onPress={noop}>Not this one</GhostButton>
+              <PrimaryButton disabled={!hasTask} onPress={noop}>
+                Start
+              </PrimaryButton>
+              <GhostButton disabled={!hasTask} onPress={replaceTask}>
+                Not this one
+              </GhostButton>
             </View>
           </View>
 
@@ -348,6 +360,10 @@ const styles = StyleSheet.create({
   },
   contextBlock: {
     alignItems: "center",
+  },
+  taskRegion: {
+    justifyContent: "center",
+    width: "100%",
   },
   taskCard: {
     alignItems: "center",
