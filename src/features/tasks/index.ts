@@ -25,3 +25,6 @@ export {
 
 export { LocalTaskRepository } from "./repositories";
 export type { TaskRepository } from "./repositories";
+
+export { selectTask } from "./selection";
+export type { TaskSelectionInput, TaskSelectionResult } from "./selection";
