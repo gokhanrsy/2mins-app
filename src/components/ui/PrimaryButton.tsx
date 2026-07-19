@@ -16,9 +16,12 @@ export interface PrimaryButtonProps
 }
 
 const MIN_TOUCH_TARGET = 44;
-const BUTTON_HEIGHT = 52;
+const BUTTON_HEIGHT = 58;
 const PRESSED_OPACITY = 0.92;
 const PRESSED_SCALE = 0.98;
+
+const isTextChild = (children: ReactNode): children is string | number =>
+  typeof children === "string" || typeof children === "number";
 
 export function PrimaryButton({
   accessibilityState,
@@ -61,9 +64,13 @@ export function PrimaryButton({
         typeof style === "function" ? style(state) : style,
       ]}
     >
-      <AppText color="accentText" variant="label">
-        {children}
-      </AppText>
+      {isTextChild(children) ? (
+        <AppText color="accentText" variant="label">
+          {children}
+        </AppText>
+      ) : (
+        children
+      )}
     </Pressable>
   );
 }
